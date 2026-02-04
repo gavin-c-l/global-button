@@ -1,0 +1,20 @@
+{
+  "name": "global-button",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/gavin-c-l/global-button#readme",
+  "bugs": {
+    "url": "https://github.com/gavin-c-l/global-button/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gavin-c-l/global-button.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
