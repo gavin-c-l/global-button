@@ -7,3 +7,13 @@
     "wdth" 100;
 }
 
+.link-hover {
+  display: inline-block;
+  text-decoration: underline;
+  transition: transform 0.3s ease, color 0.3s ease, text-decoration 0.3s ease;
+}
+.link-hover:hover {
+  transform: translateY(-3px);
+  color:blue;
+  text-decoration: none;
+}
