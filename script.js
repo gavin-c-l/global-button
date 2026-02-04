@@ -9,7 +9,7 @@ import { getDatabase, ref, onValue, runTransaction } from "https://www.gstatic.c
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: "AIzaSyAkq_zfHbl07lvMuDFpKtUJ4VAqM2T6wp4",
+  apiKey: process,
   authDomain: "globe-button.firebaseapp.com",
   databaseURL: "https://globe-button-default-rtdb.firebaseio.com",
   projectId: "globe-button",
