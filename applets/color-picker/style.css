@@ -1,0 +1,32 @@
+#counter {
+    text-align:center;
+    font-family: fantasy;
+    font-size: 3in;
+    margin-bottom: auto;
+    
+}
+
+h2 {
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size:.5in;
+    margin-bottom: auto;
+}
+
+#goal {
+    text-align: center;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size:.35in;
+}
+
+.link-hover {
+  display: inline-block;
+  color: black;
+  text-decoration: underline;
+  transition: transform 0.3s ease, color 0.3s ease, text-decoration 0.3s ease;
+}
+.link-hover:hover {
+  transform: translateY(-3px);
+  color:blue;
+  text-decoration: none;
+}
