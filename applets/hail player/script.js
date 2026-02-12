@@ -1,4 +1,9 @@
 const notes = [1, 1, 4, 1, 1, 4, 1, 1, 4, 4, 3, 5, 9, 13, 23, 24, 22, 8,12,16, 9, 5, 5, 15, 13, 11, 6, 3, 0, 2, 7, 16, 15, 13, 20, 18, 15, 14, 23, 24, 22, 8,12,16, 9, 5, 5, 15, 13, 11, 6, 8, 13, 2, 8, 16, 21, 19, 17 ];
+const words = ["1️⃣", "2️⃣", "🎺", "1️⃣", "2️⃣", "🎺", "1️⃣", "2️⃣", "🎺", "🎺", "🔴", "⚪", "🏒", "🥅", "Hail,", "dear", "old", "Ren-", 
+               "sse-", 'laer,', "the", "coll-", "ege", "of", "our", "heart", "For", "dear", "old", "Ren-",
+               "sse-", 'laer,', "we", 'all', 'must', 'do', 'our', 'part', 'True', 'to', 'old', "Ren-",
+               "sse-", 'laer,', "we'll", 'al-', 'ways', 'strive', 'to', 'be', 'Now, ', "dear", "old", "Ren-",
+               "sse-", 'laer,', 'hail', 'to', 'be!!!'];
 
 var sound = new Howl({
     preload: true,
@@ -32,15 +37,48 @@ var sound = new Howl({
     },
 });
 
+
+let interactionEnabled = false;
+
+window.addEventListener('load', () => {
+  const introText = document.getElementById('intro-text');
+  
+  anime.timeline({
+    complete: () => {
+      interactionEnabled = true;
+      introText.remove();
+    }
+  })
+  .add({
+    targets: '#intro-text',
+    bottom: ['-100px', '50%'],
+    opacity: [0, 1],
+    duration: 1500,
+    easing: 'easeOutExpo'
+  })
+  .add({
+    targets: '#intro-text',
+    bottom: '50%',
+    opacity: 1,
+    duration: 1000,
+    easing: 'linear'
+  })
+  .add({
+    targets: '#intro-text',
+    bottom: '150%',
+    opacity: [1, 0],
+    duration: 1500,
+    easing: 'easeInExpo'
+  });
+});
+
 function createSound(count) {
-    console.log(count);
     sound.play(String(count));
 }
 
 let counter = 0;
 document.addEventListener('keypress', (e) => {
-    // Check if it's a letter key
-    if (e.key.match(/^[a-zA-Z]$/)) {
+    if (e.key.match(/^[a-zA-Z]$/) && interactionEnabled) {
     createBurst();
     createSound(notes[counter]);
     counter++;
@@ -49,11 +87,21 @@ document.addEventListener('keypress', (e) => {
 });
 
 function createBurst() {
-    // Random position on screen
-    const x = Math.random() * window.innerWidth;
-    const y = Math.random() * window.innerHeight;
-    
-    // Create 8-15 circles
+    const margin = 0.15; 
+      
+    const minX = window.innerWidth * margin;
+    const maxX = window.innerWidth * (1 - margin);
+    const minY = window.innerHeight * margin;
+    const maxY = window.innerHeight * (1 - margin);
+      
+    const x = minX + Math.random() * (maxX - minX);
+    const y = minY + Math.random() * (maxY - minY);
+
+
+    animatieWord(words[counter], x, y);
+
+
+
     const numCircles = Math.floor(Math.random() * 8) + 8;
     
     for (let i = 0; i < numCircles; i++) {
@@ -63,26 +111,62 @@ function createBurst() {
     circle.style.top = y + 'px';
     document.body.appendChild(circle);
     
-    // Random angle and distance
+
     const angle = (Math.PI * 2 * i) / numCircles + (Math.random() - 0.5) * 0.5;
-    const distance = Math.random() * 80 + 30; // 30-110px
+    const distance = Math.random() * 80 + 30;
     
     const targetX = x + Math.cos(angle) * distance;
     const targetY = y + Math.sin(angle) * distance;
     
-    // Animate
+
     anime({
         targets: circle,
         left: targetX,
         top: targetY,
         opacity: [1, 0],
         scale: [1, 0.3],
-        duration: 600 + Math.random() * 400,
+        duration: 600 + Math.random() * 600,
         easing: 'easeOutQuad',
         complete: () => {
         circle.remove();
         }
     });
     }
+}
+
+function animatieWord(word, x, y) {
+    const wordElement = document.createElement('div');
+    wordElement.className = 'word';
+    wordElement.textContent = word;
+    wordElement.style.left = x + 'px';
+    wordElement.style.top = y + 'px';
+    document.body.appendChild(wordElement);
+  
+    anime.timeline({
+        complete: () => {
+            wordElement.remove();
+        }
+    })
+    .add({
+        targets: wordElement,
+        opacity: [0, 1],
+        scale: [0.5, 1.2],
+        duration: 400,
+        easing: 'easeOutQuad'
+    })
+    .add({
+        targets: wordElement,
+        scale: [1.2, 1],
+        duration: 200,
+        easing: 'easeInOutQuad'
+    })
+    .add({
+        targets: wordElement,
+        opacity: [1, 0],
+        scale: [1, 0.8],
+        duration: 600,
+        delay: 200,
+        easing: 'easeInQuad'
+    });
 }
 
