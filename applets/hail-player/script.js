@@ -53,21 +53,21 @@ window.addEventListener('load', () => {
     targets: '#intro-text',
     bottom: ['-100px', '50%'],
     opacity: [0, 1],
-    duration: 1500,
+    duration: 1250,
     easing: 'easeOutExpo'
   })
   .add({
     targets: '#intro-text',
     bottom: '50%',
     opacity: 1,
-    duration: 1000,
+    duration: 750,
     easing: 'linear'
   })
   .add({
     targets: '#intro-text',
     bottom: '150%',
     opacity: [1, 0],
-    duration: 1500,
+    duration: 1250,
     easing: 'easeInExpo'
   });
 });
@@ -113,7 +113,7 @@ function createBurst() {
     
 
     const angle = (Math.PI * 2 * i) / numCircles + (Math.random() - 0.5) * 0.5;
-    const distance = Math.random() * 80 + 30;
+    const distance = Math.random() * 80 + 40;
     
     const targetX = x + Math.cos(angle) * distance;
     const targetY = y + Math.sin(angle) * distance;
@@ -123,7 +123,7 @@ function createBurst() {
         targets: circle,
         left: targetX,
         top: targetY,
-        opacity: [1, 0],
+        opacity: [1, 0.4],
         scale: [1, 0.3],
         duration: 600 + Math.random() * 600,
         easing: 'easeOutQuad',
