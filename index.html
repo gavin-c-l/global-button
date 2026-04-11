@@ -6,28 +6,61 @@
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Sour+Gummy:ital,wght@0,100..900;1,100..900&family=Doto:wght@100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css", href="style.css">
   </head>
-  <body class="bg-blue-400">
+  <body>
 
     <div id="screen" class="container-flex">
-        <h1 class="text-center mt-10 text-4xl sour-gummy font-semibold">
-            Gavin's new super cool and awesome webpage!
+        
+      <div class="flex-row mt-20">
+        <h1 class="flex justify-center">
+          <img class="name" src="resources/images/2026-04-10-G.gif" />
+          <img id="star" src="resources/images/Star.gif" />
+          <img class="name" src="resources/images/2026-04-10-V.gif" />
+          <img class="name" src="resources/images/2026-04-10-I.gif" />
+          <img class="name" src="resources/images/2026-04-10-N.gif" />
+          <img class="name" src="resources/images/2026-04-10--S.gif" />
+          <img id="web-text" src="resources/images/2026-04-10-Webpage.gif" />
         </h1>
-        <div class="flex flex-col mt-50">
-            <h2 class="text-center text-2xl sour-gummy font-semibold">Links to things n stuff:</h2>
-            <a class="m-5 text-center text-xl sour-gummy link-hover" href="applets.html">Applets</a>
-            <a class="m-5 text-center text-xl sour-gummy link-hover" href="schoolrankings.html">RPI Course Rankings</a>
-        </div>
-        <div class="flex flex-col">
-            <h3 class="text-xl ml-10 sour-gummy">Disclaimers:</h3>
-            <p class="text-large ml-10 sour-gummy">Incredibly inspired by <a href="https://webagge.vercel.app" class="link-hover">Evan's Webpage.</a></p> 
-            <p class="text-large ml-10 sour-gummy">Very work in progress as of 2/4/26. Expect MUCH more in the near future.</p>           
-            <!--Add more disclaimer/notes here-->
-        </div>
-    </div>
+      </div>
 
+      <div class="sprite"></div>
+      <div class="section h-100 lg:mx-100 md:mx-50 sm:mx-10 my-25">
+        <div class="flex w-full h-full">
+          <div class="w-1/2 flex justify-center items-center">
+            <h2 class="doto text-center text-2xl pt-5">Welcome to my website!</h2>
+          </div>
+          <div class="border-l-2 border-dashed border-white self-stretch"></div>
+          <div class=" subsection w-1/2 flex flex-col m-5 overflow-y-auto">
+            <h2 class="doto text-xl pt-5 text-center">Site Updates:</h2>
+            <p class="doto text-md pt-5 mx-10">4/11/2026: BIG Redesign</p>
+            <p class="doto text-md pt-5 mx-10">2/12/2026: Added "Hail or Something idk"</p>
+            <p class="doto text-md pt-5 mx-10">2/5/2026: Added Color Clicker</p>
+            <p class="doto text-md pt-5 mx-10">2/4/2026: Created home page and applets page with global button</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="section lg:mx-100 md:mx-50 sm:mx-10 my-25">
+        <div class="flex flex-col w-full h-full">
+          <h2 class="doto text-2xl text-center mt-5">Links to things n stuff</h2>
+          <div class="subsection m-5">
+            <a class="m-5 text-center text-xl doto link-hover" href="applets.html">Applets</a>
+            
+          </div>
+        </div>
+      </div>
+
+
+      <div class="section lg:mx-100 md:mx-50 sm:mx-10 my-25">
+        <div class="flex flex-col w-full h-full">
+          <h2 class="doto text-2xl text-center mt-5">Disclaimers:</h2>
+          <div class="subsection m-5">
+            <p class="text-large m-5 doto">Incredibly inspired by <a href="https://webagge.vercel.app" class="link-hover">Evan's Webpage.</a> Go check it out!</p>
+          </div>
+        </div>
+      </div>
 
   </body>
 </html>

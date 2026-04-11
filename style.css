@@ -15,6 +15,15 @@
   font-style: normal;
 }
 
+.doto {
+  font-family: "Doto", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings:
+    "ROND" 0;
+}
+
 .link-hover {
   display: inline-block;
   text-decoration: underline;
@@ -24,4 +33,96 @@
   transform: translateY(-3px);
   color:blue;
   text-decoration: none;
+}
+
+.name {
+  width: 100px;
+  margin-right: -50px;
+}
+
+#web-text {
+  width: 200px;
+  margin-left:50px;
+}
+
+#star {
+  width:60px;
+  height:60px;
+  margin-top: 20px;
+  margin-right:-25px;
+  margin-left:25px;
+}
+
+body {
+  background:url(resources/images/background.png), linear-gradient(to bottom, rgb(251, 140, 255), rgb(124, 181, 255),rgb(251, 140, 255));
+  background-size: cover, cover;
+  background-repeat: repeat-y;
+  animation: scrollBackground 25s linear infinite;;
+}
+
+.section {
+  background: rgb(26, 19, 94);
+  clip-path: polygon(
+    20px 0%,      /* top-left cut */
+    100% 0%,      /* top-right */
+    100% calc(100% - 20px),  /* bottom-right cut */
+    calc(100% - 20px) 100%,  /* bottom-right cut */
+    0% 100%,      /* bottom-left */
+    0% 20px       /* top-left cut */
+  );
+  color:white
+}
+
+.subsection {
+  background: rgb(19, 13, 66);
+  clip-path: polygon(
+    0% 0%,                       
+    calc(100% - 20px) 0%,         
+    100% 20px,                    
+    100% 100%,                   
+    20px 100%,                    
+    0% calc(100% - 20px)          
+  );
+  color:white
+}
+
+  @keyframes scrollBackground {
+      from {
+          background-position: 0 0;
+      }
+      to {
+          background-position: 0px 1920px; /* Adjust based on image width */
+      }
+  }
+
+.subsection::-webkit-scrollbar {
+  background: rgb(19, 13, 66);
+  width:8px;
+  border-radius: 4px;
+}
+.subsection::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, rgb(251, 140, 255), rgb(124, 181, 255));
+  border-radius: 20px;
+}
+
+.subsection::-webkit-scrollbar-track {
+  background: rgb(38, 25, 83);
+  border-radius: 10px;
+}
+
+.sprite {
+  width: 64px;
+  height: 64px;
+  background-image: url('resources/images/Goose/Idle.png');
+  background-size: 128px 64px; /* full sheet size */
+  position: relative; /* fixed = moves with scroll */
+  top: 132px;      /* adjust position */
+  left: 500px;
+  transform: scale(2);
+  animation: sprite-anim 0.75s steps(1) infinite; /* steps(1) = hard frame switch */
+}
+
+@keyframes sprite-anim {
+  0%   { background-position: 0px 0px; }    /* frame 1 */
+  50%  { background-position: -64px 0px; }  /* frame 2 */
 }
