@@ -27,6 +27,8 @@ const database = getDatabase(app);
 //ref function(database var, field)
 const numRef = ref(database, "button-num");
 
+const commentsRef = ref(database, "comments");
+
 //snapshot - realtime-updates
 onValue(numRef, (snapshot) => {
   const value = snapshot.val();
@@ -46,3 +48,36 @@ document.getElementById("down").addEventListener("click", () => {
         return currentValue > 0 ? currentValue - 1 : currentValue;
     });
 });
+
+/*
+document.getElementById("comment-form").addEventListener("submit", (e) => {
+    e.preventDefault();
+    const input = document.getElementById("comment-input");
+    const text = input.value.trim();
+
+    if (!text) return;
+
+    const newCommentRef = push(commentsRef);
+    set(newCommentRef, {
+        text: text,
+        timestamp: Date.now()
+    });
+
+    input.value = ""; 
+});
+
+// Listen for comments in realtime
+onValue(commentsRef, (snapshot) => {
+    const container = document.getElementById("comments-container");
+    container.innerHTML = "";
+
+    snapshot.forEach((childSnapshot) => {
+        const comment = childSnapshot.val();
+
+        const div = document.createElement("div");
+        div.textContent = comment.text;
+        container.appendChild(div);
+    });
+});
+
+*/

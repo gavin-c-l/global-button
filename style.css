@@ -63,12 +63,12 @@ body {
 .section {
   background: rgb(26, 19, 94);
   clip-path: polygon(
-    20px 0%,      /* top-left cut */
-    100% 0%,      /* top-right */
-    100% calc(100% - 20px),  /* bottom-right cut */
-    calc(100% - 20px) 100%,  /* bottom-right cut */
-    0% 100%,      /* bottom-left */
-    0% 20px       /* top-left cut */
+    20px 0%,    
+    100% 0%,     
+    100% calc(100% - 20px),
+    calc(100% - 20px) 100%,  
+    0% 100%,    
+    0% 20px      
   );
   color:white
 }
@@ -91,7 +91,7 @@ body {
           background-position: 0 0;
       }
       to {
-          background-position: 0px 1920px; /* Adjust based on image width */
+          background-position: 0px 1920px; 
       }
   }
 
@@ -114,15 +114,15 @@ body {
   width: 64px;
   height: 64px;
   background-image: url('resources/images/Goose/Idle.png');
-  background-size: 128px 64px; /* full sheet size */
-  position: relative; /* fixed = moves with scroll */
-  top: 132px;      /* adjust position */
+  background-size: 128px 64px;
+  position: relative;
+  top: 132px;      
   left: 500px;
   transform: scale(2);
-  animation: sprite-anim 0.75s steps(1) infinite; /* steps(1) = hard frame switch */
+  animation: goose_animation 0.75s steps(1) infinite; 
 }
 
-@keyframes sprite-anim {
-  0%   { background-position: 0px 0px; }    /* frame 1 */
-  50%  { background-position: -64px 0px; }  /* frame 2 */
+@keyframes goose_animation {
+  0%   { background-position: 0px 0px; }    
+  50%  { background-position: -64px 0px; }  
 }

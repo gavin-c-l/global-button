@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Sour+Gummy:ital,wght@0,100..900;1,100..900&family=Doto:wght@100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css", href="style.css">
+    <script defer src="applets/global-counter/script.js"></script>
   </head>
   <body>
 
@@ -28,17 +29,34 @@
       <div class="sprite"></div>
       <div class="section h-100 lg:mx-100 md:mx-50 sm:mx-10 my-25">
         <div class="flex w-full h-full">
-          <div class="w-1/2 flex justify-center items-center">
+          <div class="w-1/2 flex flex-col justify-center items-center">
             <h2 class="doto text-center text-2xl pt-5">Welcome to my website!</h2>
+            <p class="doto text-center pt-5">There will be some things I want to remember and/or share on here, so look around and explore!</p>
           </div>
           <div class="border-l-2 border-dashed border-white self-stretch"></div>
           <div class=" subsection w-1/2 flex flex-col m-5 overflow-y-auto">
             <h2 class="doto text-xl pt-5 text-center">Site Updates:</h2>
+            <p class="doto text-md pt-5 mx-10">4/13/2026: Added recent song section and fixed hail lyric &lpar;thx Evan&rpar;</p>
             <p class="doto text-md pt-5 mx-10">4/11/2026: BIG Redesign</p>
             <p class="doto text-md pt-5 mx-10">2/12/2026: Added "Hail or Something idk"</p>
             <p class="doto text-md pt-5 mx-10">2/5/2026: Added Color Clicker</p>
             <p class="doto text-md pt-5 mx-10">2/4/2026: Created home page and applets page with global button</p>
           </div>
+        </div>
+      </div>
+
+
+      <div class="flex gap-4 lg:mx-100 md:mx-50 sm:mx-10 my-25">
+        <div class="section flex-1">
+            <h2 class="doto text-xl text-center pb-4 pt-2">My Music!</h2>
+            <img
+              class="mx-auto block pb-10"
+              src="https://spotify-recently-played-readme.vercel.app/api?user=unicornman35&count=10&unique=1"
+              alt="Recently Played"
+            />
+        </div>
+        <div class="flex-1">
+          <!--Add the Comment Section Here-->
         </div>
       </div>
 

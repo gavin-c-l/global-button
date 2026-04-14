@@ -3,7 +3,7 @@ const words = ["1️⃣", "2️⃣", "🎺", "1️⃣", "2️⃣", "🎺", "1️
                "sse-", 'laer,', "the", "coll-", "ege", "of", "our", "heart", "For", "dear", "old", "Ren-",
                "sse-", 'laer,', "we", 'all', 'must', 'do', 'our', 'part', 'True', 'to', 'old', "Ren-",
                "sse-", 'laer,', "we'll", 'al-', 'ways', 'strive', 'to', 'be', 'Now, ', "dear", "old", "Ren-",
-               "sse-", 'laer,', 'hail', 'to', 'be!!!'];
+               "sse-", 'laer,', 'hail', 'to', 'thee!!!'];
 
 var sound = new Howl({
     preload: true,
