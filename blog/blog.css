@@ -1,0 +1,87 @@
+body {
+  background:url(../resources/images/night_bg.png), linear-gradient(to bottom, rgb(0, 0, 0), rgb(0, 0, 0), rgb(0, 26, 82),rgb(22, 0, 58), rgb(0, 0, 0));
+  background-size: cover, cover;
+  background-repeat: repeat-y;
+  animation: scrollBackground 30s linear infinite;;
+}
+
+@keyframes scrollBackground {
+    from {
+        background-position: 0px 1920px;
+    }
+    to {
+        background-position: 0 0; 
+    }
+}
+
+.doto {
+  font-family: "Doto", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings:
+    "ROND" 0;
+}
+
+.section {
+  background: rgb(35, 14, 70);
+  clip-path: polygon(
+    20px 0%,    
+    100% 0%,     
+    100% calc(100% - 20px),
+    calc(100% - 20px) 100%,  
+    0% 100%,    
+    0% 20px      
+  );
+  color:white
+}
+
+.subsection {
+  background: rgb(23, 8, 43);
+  clip-path: polygon(
+    0% 0%,                       
+    calc(100% - 20px) 0%,         
+    100% 20px,                    
+    100% 100%,                   
+    20px 100%,                    
+    0% calc(100% - 20px)          
+  );
+  color:white
+}
+
+.link-hover {
+  display: inline-block;
+  text-decoration: dashed;
+  transition: transform 0.3s ease, color 0.3s ease, text-decoration 0.3s ease;
+}
+.link-hover:hover {
+  transform: translateY(-3px);
+  color:rgb(255, 65, 246);
+  font-weight: 900;
+  text-decoration: none;
+}
+
+.sprite {
+  width: 100px;
+  height: 100px;
+  position: relative;
+}
+
+.sprite img {
+  position: absolute;
+  top: 120px;
+  left: 500px;
+  opacity: 0;
+  animation: cycle 5s steps(1) infinite;
+}
+
+.sprite img:nth-child(1) { animation-delay: 0s; }
+.sprite img:nth-child(2) { animation-delay: 1s; }
+.sprite img:nth-child(3) { animation-delay: 2s; }
+.sprite img:nth-child(4) { animation-delay: 3s; }
+.sprite img:nth-child(5) { animation-delay: 4s; }
+
+@keyframes cycle {
+  0%, 20% { opacity: 1; }
+  20.01%, 100% { opacity: 0; }
+}

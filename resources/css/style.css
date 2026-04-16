@@ -54,7 +54,7 @@
 }
 
 body {
-  background:url(resources/images/background.png), linear-gradient(to bottom, rgb(251, 140, 255), rgb(124, 181, 255),rgb(251, 140, 255));
+  background:url(../images/background.png), linear-gradient(to bottom, rgb(251, 140, 255), rgb(124, 181, 255),rgb(251, 140, 255));
   background-size: cover, cover;
   background-repeat: repeat-y;
   animation: scrollBackground 25s linear infinite;;
@@ -86,14 +86,14 @@ body {
   color:white
 }
 
-  @keyframes scrollBackground {
-      from {
-          background-position: 0 0;
-      }
-      to {
-          background-position: 0px 1920px; 
-      }
-  }
+@keyframes scrollBackground {
+    from {
+        background-position: 0 0;
+    }
+    to {
+        background-position: 0px 1920px; 
+    }
+}
 
 .subsection::-webkit-scrollbar {
   background: rgb(19, 13, 66);
