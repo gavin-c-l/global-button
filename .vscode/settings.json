@@ -1,0 +1,12 @@
+{
+    "editor.detectIndentation": false,
+    "[instructions]": {
+        "editor.tabSize": 4
+    },
+    "[yaml]": {
+        "editor.tabSize": 4
+    },
+    "[prompt]": {
+        "editor.tabSize": 4
+    }
+}
