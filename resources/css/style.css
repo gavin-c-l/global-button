@@ -54,10 +54,22 @@
 }
 
 body {
-  background:url(../images/background.png), linear-gradient(to bottom, rgb(251, 140, 255), rgb(124, 181, 255),rgb(251, 140, 255));
-  background-size: cover, cover;
-  background-repeat: repeat-y;
-  animation: scrollBackground 25s linear infinite;;
+  background-image: url(../images/background.png), 
+                     linear-gradient(to bottom, rgb(251, 140, 255), rgb(124, 181, 255), rgb(251, 140, 255));
+  background-size: 100% auto, cover;
+  background-repeat: repeat-y, no-repeat;
+  background-position: 0 0, center center;
+  min-height: 100vh;
+  animation: scrollBackground 25s linear infinite;
+}
+
+@keyframes scrollBackground {
+    from {
+        background-position: 0 0, center center;
+    }
+    to {
+        background-position: 0 1920px, center center;
+    }
 }
 
 .section {
@@ -84,15 +96,6 @@ body {
     0% calc(100% - 20px)          
   );
   color:white
-}
-
-@keyframes scrollBackground {
-    from {
-        background-position: 0 0;
-    }
-    to {
-        background-position: 0px 1920px; 
-    }
 }
 
 .subsection::-webkit-scrollbar {
