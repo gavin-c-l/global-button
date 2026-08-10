@@ -35,16 +35,6 @@
   text-decoration: none;
 }
 
-.name {
-  width: 100px;
-  margin-right: -50px;
-}
-
-#web-text {
-  width: 200px;
-  margin-left:50px;
-}
-
 #star {
   width:60px;
   height:60px;
